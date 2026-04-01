@@ -1,18 +1,13 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Deploy to S3') {
-            steps {
-                withCredentials([[
-                    $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws-s3-creds'
-                ]]) {
-                    sh '''
-                    aws s3 sync . s3://edwin-static-site --delete
-                    '''
-                }
-            }
+stage('Deploy to S3') {
+    steps {
+        withCredentials([[
+            $class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'aws-s3-creds'
+        ]]) {
+            sh '''
+            aws configure set default.region ap-south-1
+            aws s3 sync . s3://edwin122 --delete
+            '''
         }
     }
 }
