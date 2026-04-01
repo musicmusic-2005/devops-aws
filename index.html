@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple Web Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #555;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My First Web Page</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>Welcome to My Website</h2>
+        <p>This is a simple web page created using HTML, CSS, and JavaScript.</p>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="message"></p>
+    </div>
+
+    <footer>
+        <p>© 2026 My Website | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = "Hello! You clicked the button 🎉";
+        }
+    </script>
+
+</body>
+</html>
